@@ -17,7 +17,7 @@ const Message = ({ message }) => {
         <div className="text-sm mb-1">
           {message.isUser 
             ? (language === 'ar' ? 'أنت' : 'You')
-            : (language === 'ar' ? 'Sli-Health' : 'Sli-Health')
+            : (language === 'ar' ? 'Sil-Health' : 'Sil-Health')
           }
         </div>
         <div className="text-base leading-relaxed whitespace-pre-wrap">

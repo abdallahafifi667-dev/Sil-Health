@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addMessage, setTyping } from '../../store/slices/chatSlice'
 import { GeminiAPI } from '../../utils/gemini'
@@ -7,7 +7,7 @@ import Message from './Message'
 const ChatInterface = () => {
   const [inputMessage, setInputMessage] = useState('')
   const dispatch = useDispatch()
-  const { messages, isTyping } = useSelector((state) => state.chat)
+  const { messages, isTyping, imageContext } = useSelector((state) => state.chat)
   const { language } = useSelector((state) => state.app)
   const messagesEndRef = useRef(null)
   const chatContainerRef = useRef(null)
@@ -25,12 +25,13 @@ const ChatInterface = () => {
 
     dispatch(addMessage(userMessage))
     setInputMessage('')
-    
-    
+
+
     dispatch(setTyping(true))
 
     try {
-      const response = await GeminiAPI.sendMessage(inputMessage)
+      // Pass imageContext to enable context-aware responses
+      const response = await GeminiAPI.sendMessage(inputMessage, imageContext)
 
       const aiMessage = {
         id: Date.now() + 1,
@@ -72,9 +73,15 @@ const ChatInterface = () => {
         <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
           {language === 'ar' ? 'المساعد الطبي التفاعلي' : 'Interactive Medical Assistant'}
         </h2>
+        {imageContext.hasContext && (
+          <span className="ml-auto bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+            <i className="fas fa-image"></i>
+            {language === 'ar' ? 'سياق الصورة نشط' : 'Image context active'}
+          </span>
+        )}
       </div>
 
-      <div 
+      <div
         ref={chatContainerRef}
         className="flex-1 overflow-y-auto mb-4 space-y-4 px-2 scroll-smooth"
       >

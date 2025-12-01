@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUploadedImage, setAnalyzing, setAnalysisResult } from '../../store/slices/imageSlice'
+import { setImageContext } from '../../store/slices/chatSlice'
 import { GeminiAPI } from '../../utils/gemini'
 
 
@@ -38,14 +39,23 @@ const ImageUploader = () => {
 
     try {
       // Analyze image with Gemini API
-      const analysis = await GeminiAPI.analyzeImage(file, false)
-      dispatch(setAnalysisResult(analysis))
+      const result = await GeminiAPI.analyzeImage(file)
+
+      // Save analysis result for display
+      dispatch(setAnalysisResult(result.analysis))
+
+      // Save image context for chat conversation
+      dispatch(setImageContext({
+        imageData: previewUrl,
+        analysis: result.analysis,
+      }))
     } catch (error) {
       console.error('Image processing error:', error)
-      dispatch(setAnalysisResult(language === 'ar'
+      const fallbackText = language === 'ar'
         ? 'تم استقبال الصورة بنجاح. هذه معلومات تحليلية عن محتوى الصورة الطبية.'
         : 'Image received successfully. Here is analytical information about the medical image content.'
-      ))
+
+      dispatch(setAnalysisResult(fallbackText))
     } finally {
       dispatch(setAnalyzing(false))
     }
