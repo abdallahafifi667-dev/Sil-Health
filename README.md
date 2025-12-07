@@ -1,10 +1,10 @@
-# 🏥 Sil-Health - AI-Powered Medical Assistant
+# 🏥 Sil-Health - Smart Medical Assistant
 
 <div align="center">
 
 ![Sil-Health Logo](public/unnamed.jpg)
 
-**An intelligent medical assistant powered by Google Gemini AI**
+**An intelligent medical assistant powered by Google Gemini**
 
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-4.4.5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -34,11 +34,11 @@
 
 ## 🌟 Overview
 
-**Sil-Health** is a cutting-edge medical assistant application that leverages the power of Google's Gemini AI to provide intelligent medical consultations, image analysis, and personalized health guidance. Built with modern web technologies, it offers a seamless, responsive, and intuitive user experience.
+**Sil-Health** is a cutting-edge medical assistant application that leverages the power of Google's Gemini to provide intelligent medical consultations, image analysis, and personalized health guidance. Built with modern web technologies, it offers a seamless, responsive, and intuitive user experience.
 
 ### 🎯 Key Highlights
 
-- 🤖 **AI-Powered Conversations**: Natural language medical consultations using Gemini 2.5 Flash
+- 🤖 **Smart Conversations**: Natural language medical consultations using Gemini 2.5 Flash
 - 📸 **Medical Image Analysis**: Advanced analysis of X-rays, prescriptions, and medication photos
 - 🧠 **Context-Aware Chat**: Intelligent memory system that remembers previous image analyses
 - 🌓 **Dark/Light Mode**: Beautiful themes for comfortable viewing
@@ -51,7 +51,7 @@
 
 ### 🩺 Medical Consultation Chat
 
-- Real-time AI-powered medical Q&A
+- Real-time intelligent medical Q&A
 - Context-aware responses based on uploaded images
 - Conversational interface with typing indicators
 - Medical advice covering symptoms, treatments, and medications
@@ -115,7 +115,7 @@
 - **Custom CSS** - Enhanced animations and effects
 
 ### AI & Integration
-- **Google Gemini AI** - Gemini 2.5 Flash model
+- **Google Gemini** - Gemini 2.5 Flash model
 - **REST API** - Direct Gemini API integration
 
 ### 3D Graphics
@@ -184,7 +184,7 @@
 You can customize the application by modifying:
 
 - **Theme Colors**: `tailwind.config.js`
-- **AI Prompts**: `src/utils/gemini.js`
+- **System Prompts**: `src/utils/gemini.js`
 - **Initial Messages**: `src/store/slices/chatSlice.js`
 - **Language Strings**: Throughout component files
 
@@ -196,14 +196,14 @@ You can customize the application by modifying:
 
 1. **Type your question** in the chat input
 2. **Press Enter** or click the Send button
-3. **Receive AI-powered response** with medical guidance
+3. **Receive smart response** with medical guidance
 
 ### Analyzing Medical Images
 
 1. **Click or drag-and-drop** an image to the upload area
 2. **Wait for analysis** (usually 2-5 seconds)
 3. **View detailed results** in the analysis panel
-4. **Ask follow-up questions** - the AI remembers the context!
+4. **Ask follow-up questions** - the system remembers the context!
 
 ### Example Workflows
 
@@ -287,7 +287,7 @@ sil-health/
 
 ## 🌐 API Integration
 
-### Gemini AI Integration
+### Gemini Integration
 
 The app uses Google's Gemini 2.5 Flash model for:
 
@@ -328,7 +328,7 @@ Toggle with the moon/sun icon in the header!
 
 ### Language Features
 - Dynamic UI text switching
-- AI responds in user's language
+- System responds in user's language
 - Persistent language preference
 
 ---
@@ -373,7 +373,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 **Important**: This application is designed for **informational and educational purposes only**. It is **NOT a substitute for professional medical advice, diagnosis, or treatment**. 
 
 - Always consult qualified healthcare professionals for medical concerns
-- Do not rely solely on AI-generated medical information
+- Do not rely solely on generated medical information
 - In case of emergency, contact emergency services immediately
 
 ---
@@ -386,13 +386,13 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 👨‍💻 Developer
 
-**Developed with ❤️ using cutting-edge AI technology**
+**Developed with ❤️ using cutting-edge technology**
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Google Gemini AI** - For the powerful AI capabilities
+- **Google Gemini** - For the powerful capabilities
 - **React Team** - For the amazing framework
 - **Tailwind Labs** - For the utility-first CSS framework
 - **Three.js Team** - For 3D visualization capabilities
@@ -413,6 +413,6 @@ For questions, suggestions, or support:
 
 **⭐ Star this repository if you find it helpful!**
 
-Made with 💙 and AI
+Made with 💙
 
 </div>
